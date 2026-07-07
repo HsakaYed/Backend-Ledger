@@ -46,7 +46,6 @@ MONGO_URI=your_mongodb_connection_string
 
 # JWT Auth
 JWT_SECRET=your_jwt_secret
-
 JWT_EXPIRES_IN=3d
 
 # Google OAuth2 (for Nodemailer)
