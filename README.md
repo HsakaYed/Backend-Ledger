@@ -58,9 +58,13 @@ JWT_SECRET=your_jwt_secret
 JWT_EXPIRES_IN=3d
 
 # Google OAuth2 (for Nodemailer)
+
 CLIENT_ID=your_google_oauth_client_id
+
 CLIENT_SECRET=your_google_oauth_client_secret
+
 REFRESH_TOKEN=your_google_oauth_refresh_token
+
 EMAIL_USER=your_gmail_address
 
 
@@ -84,16 +88,27 @@ Project Structure
 
 bank-transaction-system/
 ├── server.js              # Entry point — loads env vars, connects DB, starts server
+
 ├── src/
+
 │   ├── app.js              # Express app configuration
+
 │   ├── config/
+
 │   │   └── db.js           # MongoDB connection logic
+
 │   ├── models/              # Mongoose schemas/models
+
 │   ├── routes/               # API route definitions
+
 │   ├── controllers/          # Route handler logic
+
 │   └── middleware/            # Custom middleware (auth, error handling, etc.)
+
 ├── package.json
+
 ├── .env                    # Environment variables (not committed)
+
 └── .gitignore
 
 
@@ -109,8 +124,11 @@ Features
 
 
 User authentication with JWT and hashed passwords (bcryptjs)
+
 Secure cookie-based session handling
+
 MongoDB-backed transaction and account data
+
 Email notifications via Gmail (OAuth2-authenticated Nodemailer)
 
 
