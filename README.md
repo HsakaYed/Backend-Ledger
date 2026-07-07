@@ -119,14 +119,24 @@ Note: The exact folder layout under src/ may differ slightly depending on your i
 Environment Variables Reference
 
 VariableDescription
+
 PORT=Port the server listens on
+
 MONGO_URI=MongoDB connection string
+
 JWT_SECRET=Secret key used to sign JWTs
+
 JWT_EXPIRES_IN=JWT token expiry duration (e.g. 3d)
+
 CLIENT_ID=Google OAuth2 client ID (for Nodemailer)
+
 CLIENT_SECRET=Google OAuth2 client secret
+
 REFRESH_TOKEN=Google OAuth2 refresh token
+
 EMAIL_USER=Gmail address used to send emails
+
+
 
 Features
 
