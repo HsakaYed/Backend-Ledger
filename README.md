@@ -18,34 +18,43 @@ Dev Tooling: nodemon
 Prerequisites
 
 
+
 Node.js (v18 or later recommended)
 A MongoDB instance (local or MongoDB Atlas)
 A Google Cloud project with OAuth2 credentials (for sending email via Nodemailer)
 
 
+
 Getting Started
+
 
 1. Clone the repository
 
 bashgit clone <your-repo-url>
 cd bank-transaction-system
 
+
 2. Install dependencies
 
 bashnpm install
+
 
 3. Configure environment variables
 
 Create a .env file in the project root (this file is git-ignored and should never be committed). Use the template below:
 
+
 env# Server
 PORT=3000
+
 
 # MongoDB
 MONGO_URI=your_mongodb_connection_string
 
+
 # JWT Auth
 JWT_SECRET=your_jwt_secret 
+
 JWT_EXPIRES_IN=3d
 
 # Google OAuth2 (for Nodemailer)
