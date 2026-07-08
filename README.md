@@ -18,40 +18,53 @@ Dev Tooling: nodemon
 Prerequisites
 
 
+
 Node.js (v18 or later recommended)
 A MongoDB instance (local or MongoDB Atlas)
 A Google Cloud project with OAuth2 credentials (for sending email via Nodemailer)
 
 
+
 Getting Started
+
 
 1. Clone the repository
 
 bashgit clone <your-repo-url>
 cd bank-transaction-system
 
+
 2. Install dependencies
 
 bashnpm install
+
 
 3. Configure environment variables
 
 Create a .env file in the project root (this file is git-ignored and should never be committed). Use the template below:
 
+
 env# Server
 PORT=3000
+
 
 # MongoDB
 MONGO_URI=your_mongodb_connection_string
 
+
 # JWT Auth
-JWT_SECRET=your_jwt_secret
+JWT_SECRET=your_jwt_secret 
+
 JWT_EXPIRES_IN=3d
 
 # Google OAuth2 (for Nodemailer)
+
 CLIENT_ID=your_google_oauth_client_id
+
 CLIENT_SECRET=your_google_oauth_client_secret
+
 REFRESH_TOKEN=your_google_oauth_refresh_token
+
 EMAIL_USER=your_gmail_address
 
 
@@ -75,16 +88,27 @@ Project Structure
 
 bank-transaction-system/
 ├── server.js              # Entry point — loads env vars, connects DB, starts server
+
 ├── src/
+
 │   ├── app.js              # Express app configuration
+
 │   ├── config/
+
 │   │   └── db.js           # MongoDB connection logic
+
 │   ├── models/              # Mongoose schemas/models
+
 │   ├── routes/               # API route definitions
+
 │   ├── controllers/          # Route handler logic
+
 │   └── middleware/            # Custom middleware (auth, error handling, etc.)
+
 ├── package.json
+
 ├── .env                    # Environment variables (not committed)
+
 └── .gitignore
 
 
@@ -92,16 +116,40 @@ Note: The exact folder layout under src/ may differ slightly depending on your i
 
 
 
+
+
 Environment Variables Reference
 
-VariableDescriptionPORTPort the server listens onMONGO_URIMongoDB connection stringJWT_SECRETSecret key used to sign JWTsJWT_EXPIRES_INJWT token expiry duration (e.g. 3d)CLIENT_IDGoogle OAuth2 client ID (for Nodemailer)CLIENT_SECRETGoogle OAuth2 client secretREFRESH_TOKENGoogle OAuth2 refresh tokenEMAIL_USERGmail address used to send emails
+VariableDescription
+
+- PORT=Port the server listens on
+
+- MONGO_URI=MongoDB connection string
+
+- JWT_SECRET=Secret key used to sign JWTs
+
+- JWT_EXPIRES_IN=JWT token expiry duration (e.g. 3d)
+
+- CLIENT_ID=Google OAuth2 client ID (for Nodemailer)
+
+- CLIENT_SECRET=Google OAuth2 client secret
+
+- REFRESH_TOKEN=Google OAuth2 refresh token
+
+- EMAIL_USER=Gmail address used to send emails
+
+
+
 
 Features
 
 
 User authentication with JWT and hashed passwords (bcryptjs)
+
 Secure cookie-based session handling
+
 MongoDB-backed transaction and account data
+
 Email notifications via Gmail (OAuth2-authenticated Nodemailer)
 
 
